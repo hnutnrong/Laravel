@@ -7,7 +7,15 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index(){
-        return view('products.index'); ///products.index เหมือน path ในการเรียก
+      
+      $productName = 'Off-White';
+
+      return view('products.index',[
+          'productName' => $productName
+        
+        ]);
+      
+       
     }
 
 }

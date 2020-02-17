@@ -31,10 +31,6 @@ Route::get('product','ProductController@index');
 
 
 
-
-
-
-
 Route::get('/','HomeController@index');
 
 Route::get('product/{id}','HomeController@product');

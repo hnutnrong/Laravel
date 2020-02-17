@@ -7,5 +7,11 @@
 </head>
 <body>
     <h1>รายการสินค้า</h1>
+
+    <p>
+        {{$productName}}
+    </p>
+
+
 </body>
 </html>
