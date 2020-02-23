@@ -14,7 +14,7 @@
 
     <div class = "container">
 
-    <h1>รายการสินค้า</h1>
+    <h1>รายการสินค้า {{$products->count()}}รายการ</h1>
     <table class="table">
   <thead>
     <tr>
@@ -33,20 +33,16 @@
       <td>{{$product->created_at}}</td>
     </tr>
     @endforeach
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+   
   </tbody>
 </table>
+
+<br>
+  {{ $products->links() }}     
+
+</div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -55,3 +51,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
+
