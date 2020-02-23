@@ -30,7 +30,7 @@
       <th scope="row">{{$product->id}}</th>
       <td>{{$product->name}}</td>
       <td>{{$product->price}}</td>
-      <td>{{$product->id}}</td>
+      <td>{{$product->created_at}}</td>
     </tr>
     @endforeach
     <tr>
