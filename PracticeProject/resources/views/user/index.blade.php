@@ -7,6 +7,13 @@
                 <br><br>
                  <div align="right"><a href ="{{route('user.create')}}" class="btn btn-success">เพิ่มข้อมูล</a></div>
 
+            <!-- ดึง success มาแสดง ว่าลบข้อมูลเรียบร้อยแล้ว ไปดูได้ที่  function destroy() -->
+                @if(\Session::has('success')) 
+                    <div class="alert alert-success">
+                    <p>{{\Session::get('success') }}</p>
+                    </div>
+                 @endif
+            
                     <table class="table table-bordered table-striped">
                         <tr>
                             <th>ID</th>
@@ -20,8 +27,14 @@
                         <td>{{$row['id']}}</td>
                         <td>{{$row['fname']}}</td>
                         <td>{{$row['lname']}}</td>
-                        <td><a class="btn btn-primary">Edit</td>
-                        <td><a class="btn btn-danger">Delete</td>
+                        <td><a href="#" class="btn btn-primary">Edit</td>
+                      <td>
+                      <form method="post" class="delete_form" action="{{action('UsersController@destroy',$row['id'])}}"> <!-- ในการDELETE  -->
+                        {{csrf_field()}}   <!-- ป้องกัน request ที่ไม่พึงประสงค์ -->
+                        <input type="hidden" name="_method" value="DELETE" />  <!-- hidden สำคัญ -->
+                        <button type="submit" class="btn btn-danger">Delete</button>            
+                      </form>                  
+                      </td>
                         
                         </tr>
                         @endforeach
@@ -29,4 +42,30 @@
             </div>    
         </div>
     </div>
+    <script type ="text/javascript">
+    $(document).ready(function(){
+        $('.delete_form').on('submit',function(){
+            if(confirm("คุณต้องการลบข้อมูลหรือไม่ ? ")){
+                return true;
+            }
+            else{
+                return false;
+            }
+
+
+        })
+        
+        
+        })
+    
+    
+    </script>                            <!-- การ confirm dialog -->
+
+
+
+
+
+
+
 @stop
+
