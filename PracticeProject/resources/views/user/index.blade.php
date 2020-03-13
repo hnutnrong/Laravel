@@ -27,11 +27,11 @@
                         <td>{{$row['id']}}</td>
                         <td>{{$row['fname']}}</td>
                         <td>{{$row['lname']}}</td>
-                        <td><a href="#" class="btn btn-primary">Edit</td>
+                        <td><a href="{{action('UsersController@edit', $row['id'])}}" class="btn btn-primary">Edit</td>
                       <td>
                       <form method="post" class="delete_form" action="{{action('UsersController@destroy',$row['id'])}}"> <!-- ในการDELETE  -->
                         {{csrf_field()}}   <!-- ป้องกัน request ที่ไม่พึงประสงค์ -->
-                        <input type="hidden" name="_method" value="DELETE" />  <!-- hidden สำคัญ -->
+                        <input type="hidden" name="_method" value="DELETE" />  <!-- ถ้าเป็นกระบวนการ hidden ในเรื่องการลบจะเป็น DELETE -->
                         <button type="submit" class="btn btn-danger">Delete</button>            
                       </form>                  
                       </td>

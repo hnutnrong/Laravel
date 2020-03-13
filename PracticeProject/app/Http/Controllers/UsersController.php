@@ -65,9 +65,10 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id)  //การแก้ไข 
     {
-        //
+        $user = User::find($id);  ///การนำข้อมูลที่จะต้องการแก้ไขไปแสดง
+        return view('user.edit',compact('user','id'));
     }
 
     /**
@@ -77,9 +78,19 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) 
     {
-        //
+        $this->validate($request,         ///validate คำสั่งเช็คข้อมูล
+        ['fname' => 'required', 
+        'lname' => 'required'
+        ]
+        ); 
+
+        $user = User::find($id);
+        $user -> fname = $request -> get('fname');
+        $user -> lname = $request -> get('lname');
+        $user ->save();
+        return redirect()->route('user.index')->with('success','อัพเดทเรียบร้อย');
     }
 
     /**
