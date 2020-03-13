@@ -6,11 +6,12 @@
             <div class="col-md-12">
                 <br><br>
                  <div align="right"><a href ="{{route('user.create')}}" class="btn btn-success">เพิ่มข้อมูล</a></div>
+                <div align="right"><a href ="/user/pdfreport" class="btn btn-warning">Export to PDF</a></div>
 
             <!-- ดึง success มาแสดง ว่าลบข้อมูลเรียบร้อยแล้ว ไปดูได้ที่  function destroy() -->
                 @if(\Session::has('success')) 
                     <div class="alert alert-success">
-                    <p>{{\Session::get('success') }}</p>
+                    <p>{{\Session::get('success')}}</p>
                     </div>
                  @endif
             

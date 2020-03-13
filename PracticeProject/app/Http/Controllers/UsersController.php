@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use PDF;
 
 class UsersController extends Controller
 {
@@ -105,4 +106,11 @@ class UsersController extends Controller
         $user -> delete();
         return redirect()->route('user.index')->with('success','ลบข้อมูลเรียบร้อย');
     }
+
+    public function pdfreport(){
+        $users = User::all();
+        $pdf = PDF::loadView('user.userpdf',['user' => $users]);
+        return $pdf->stream();
+    }
+
 }

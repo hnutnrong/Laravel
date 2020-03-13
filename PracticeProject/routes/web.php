@@ -25,3 +25,5 @@ Route::get('/', function () {
 // });
 
 Route::resource('user','UsersController');
+
+Route::resource('user/pdfreport','UsersController');

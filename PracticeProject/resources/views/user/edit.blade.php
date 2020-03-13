@@ -2,7 +2,7 @@
 @section('title','จัดการฐานข้อมูล')
 @section('content')
 
-<div class="container"
+<div class="container">
 <div class="row">
 <div class = "col-md-12"><br/>
 <h3 align="center">แก้ไขข้อมูลผู้ใช้ระบบ</h3> <br/>
@@ -36,10 +36,10 @@
 <div class="form-group">
     <input type="submit" class="btn btn-primary" value="Update"/>
 </div>
-    <input type="hidden" name="_method" value="PATCH" />  <!-- ถ้าเป็นกระบวนการ hidden ในเรื่องการลบจะเป็น PATCH -->
+    <input type="hidden" name="_method" value="PATCH" />  <!-- ถ้าเป็นกระบวนการ hidden ในเรื่องการลบจะเป็น delete -->
 </form>
 
-<!-- ถ้าเป็นกระบวนการ hidden ในเรื่องการลบจะเป็น delete -->
+
 </div>
 </div>
 
