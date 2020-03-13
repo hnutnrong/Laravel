@@ -45,9 +45,9 @@ class UsersController extends Controller
             ]
             );
         $user ->save();
-        return redirect()->route('user.index')->with('success','บันทึกข้อมูลเรียบร้อย'); //การเปลี่ยนหน้าไปที่ 'create' เอาค่าsuccess ที่บอกว่าบันทึกข้อมูลเรียบร้อยไปแสดง
+        return redirect()->route('user.create')->with('success','บันทึกข้อมูลเรียบร้อย'); //การเปลี่ยนหน้าไปที่ 'create' เอาค่าsuccess ที่บอกว่าบันทึกข้อมูลเรียบร้อยไปแสดง
     }
-
+                            ///with การโยน data  ออกไปแสดงที่ view 
     /**
      * Display the specified resource.
      *

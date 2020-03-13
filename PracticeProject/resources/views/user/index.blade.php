@@ -3,5 +3,5 @@
 @section('content')
 
 <h1>Homepage</h1>
-<a href="{{route('user.create')}}">Create User</a>
+<a href="{{route('user.create')}}">เพิ่มข้อมูล</a>
 @stop
