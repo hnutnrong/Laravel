@@ -1,11 +1,11 @@
-@extends('master')
+@extends('user.master')
 @section('title','จัดการฐานข้อมูล')
 @section('content')
 
 <div class="container"
 <div class="row">
 <div class = "col-md-12"><br/>
-<h3 align="center">เพิ่มข้อมูล</h3> <br/>
+<h3 align="center">เพิ่มข้อมูลผู้ใช้</h3> <br/>
 <form method ="post" action="{{url('user')}}">
 {{csrf_field()}}
 <div class="form-group">

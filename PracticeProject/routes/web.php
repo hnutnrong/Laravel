@@ -16,13 +16,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('showname/{name}','HelloController@showHello');
-Route::get('showproduct/{product}','HelloController@resultProduct');
+//Route::get('showname/{name}','HelloController@showHello');
+//Route::get('showproduct/{product}','HelloController@resultProduct');
 
 
-Route::get('/create',function(){
-    return view('create');
-});
-
+// Route::get('/create',function(){
+//     return view('create');
+// });
 
 Route::resource('user','UsersController');
